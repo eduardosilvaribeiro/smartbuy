@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo do body */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: rgb(255, 255, 255);
+        }
+
+        /* Estilo do header */
+        header {
+            background: linear-gradient(130deg,#08c092,#e6e786);
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header .logo {
+            width: 150px;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            background: #007bff;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            background: #fff;
+            color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .offers {
+            margin-bottom: 2rem;
+        }
+
+        .offers h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .offer-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .offer-info {
+            flex: 1;
+        }
+
+        .offer-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .offer-info p {
+            font-size: 1rem;
+            color: #007bff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .product-card {
+            background :linear-gradient(130deg,#bee9de,#e7e7c1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
+        .product-card h2 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .product-card p {
+            margin: 0.5rem 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .product-card a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo do formulário */
+        form {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo do footer */
+        footer {
+            background: linear-gradient(130deg,#08c092,#e6e786);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Smart Buy.png" alt="Logo" class="logo">
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Bem-vindo à Smart Buy</h1>
+            <p>A maior loja de eletrônicos do mundo</p>
+            <a href="#products" class="btn-primary">Ver Produtos</a>
+        </section>
+        
+        <section class="offers">
+            <h2>Produtos Populares</h2>
+            <div class="offer-item">
+                <img src="produto1.jpg" alt="Produto 1">
+                <div class="offer-info">
+                    <h3>Produto em Promoção</h3>
+                    <p>Desconto de até 30%!</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="products">
+            <h1>Produtos</h1>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="produto2.jpg" alt="Produto 1">
+                    <h2>teclado red dragon</h2>
+                    <p class="price">R$ 260,00</p>
+                    <a href="#">Comprar Agora</a>
+                </div>
+                <div class="product-card">
+                    <img src="produto3.jpg" alt="Produto 2">
+                    <h2>monitor oled</h2>
+                    <p class="price">R$ 8.396,00</p>
+                    <a href="#">Comprar Agora</a>
+                </div>
+                <div class="product-card">
+                    <img src="produto4.jpg" alt="Produto 3">
+                    <h2>RTX 4090 ti super </h2>
+                    <p class="price">R$ 16.367,00</p>
+                    <a href="#">Comprar Agora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Smart Buy.
+
